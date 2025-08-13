@@ -1135,43 +1135,11 @@ html {
 .project-gallery .gallery-item:last-child {
     margin-bottom: 0;
 } 
-/* 1) Make sure project cards are visible even if any JS/animation fails */
+/* Kill the fade-in hiding so everything is visible */
+section.fade-in,
 .project-showcase,
-.project-content,
-.project-story,
-.project-gallery {
+.project-card {
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
-}
-
-/* 2) Ensure grid/flex can't collapse to zero height */
-.project-showcase .project-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  align-items: flex-start;
-}
-.project-story, .project-gallery {
-  flex: 1 1 320px;       /* responsive columns */
-  min-width: 280px;      /* prevents collapsing */
-}
-
-/* 3) Images should reserve space and not overflow */
-.project-image, .gallery-item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-/* 4) Make sure containers actually render area */
-.projects, .project-showcase, .project-gallery {
-  overflow: visible;     /* avoid clipping when elements are translated */
-}
-
-/* 5) Defensive: no accidental absolute stacking off-screen */
-.project-showcase * {
-  position: relative;    /* prevents unexpected absolute children from escaping */
 }

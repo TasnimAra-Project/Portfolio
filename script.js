@@ -44,6 +44,8 @@ const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
+document.querySelectorAll('section').forEach(s => s.classList.add('visible'));
+
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
